@@ -1,0 +1,470 @@
+:root {
+  --black: #040a0a;
+  --aqua: #43ffd2;
+  --vinous: #7d2253;
+  --pink: #d978ac;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+.aqua {
+  color: var(--aqua);
+}
+
+.black {
+  color: var(--black);
+}
+
+.white {
+  color: var(--white);
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.vinous {
+  color: var(--vinous);
+}
+
+.button {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.normal {
+  background-color: var(--aqua);
+  color: var(--black);
+}
+.basket-normal{
+  background-color: transparent;
+  border: 1px solid var(--white);
+  padding: 3% 5%;
+  color: var(--white);
+}
+
+.title {
+  font-family: "cormorant", sans-serif;
+}
+
+.header {
+  background-color: var(--black);
+  font-family: "cormorant", sans-serif;
+  .container {
+    .nav {
+      width: 100%;
+      .mobile-nav-list {
+        width: 100%;
+        margin: 10px 0;
+        .mobile-item {
+          .mobile-item-text {
+            text-transform: uppercase;
+            font-size: 2em;
+            color: var(--white);
+          }
+          img {
+            width: 35px;
+          }
+
+          #menu__toggle {
+            opacity: 0; /* Скрываем чекбокс */
+          }
+
+          /* Стили для кнопки меню */
+          .menu__btn {
+            display: flex;
+            align-items: center;
+            position: relative; /* Изменено на relative */
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            z-index: 1;
+          }
+
+          /* Гамбургер */
+          .menu__btn > span,
+          .menu__btn > span::before,
+          .menu__btn > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--aqua);
+            transition: transform 0.3s ease; /* Добавляем анимацию */
+          }
+
+          .menu__btn > span::before {
+            content: "";
+            top: -8px;
+          }
+
+          .menu__btn > span::after {
+            content: "";
+            top: 8px;
+          }
+
+          /* Стили для меню */
+          .menu__box {
+            display: block;
+            position: fixed;
+            visibility: hidden; /* Скрываем по умолчанию */
+            top: 0;
+            left: -100%; /* Скрываем за пределами экрана */
+            width: 300px;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            text-align: center;
+            background-color: var(--black);
+            box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease; /* Добавляем анимацию */
+          }
+
+          /* Элементы меню */
+          .menu__item {
+            display: block;
+            padding: 12px 24px;
+            color: var(--white);
+            font-family: "Roboto", sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+          }
+
+          .menu__item:hover {
+            background-color: var(--black);
+          }
+
+          /* Показать меню при активированном чекбоксе */
+          #menu__toggle:checked ~ .menu__box {
+            visibility: visible; /* Меню видно */
+            left: 0; /* Показываем меню */
+          }
+
+          /* Изменение стилей гамбургера при открытом меню */
+          #menu__toggle:checked + .menu__btn > span {
+            background-color: transparent; /* Скрываем гамбургер при открытом меню */
+          }
+
+          #menu__toggle:checked + .menu__btn > span::before {
+            transform: translateY(8px) rotate(45deg); /* Поворачиваем верхнюю часть */
+          }
+
+          #menu__toggle:checked + .menu__btn > span::after {
+            transform: translateY(-8px) rotate(-45deg); /* Поворачиваем нижнюю часть */
+          }
+        }
+      }
+      .nav-list {
+        width: 100%;
+
+        margin: 5px 0;
+        .nav-item {
+          .nav-link {
+            color: var(--white);
+            .nav-img {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//-------градиент-------
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(
+      45deg,
+      var(--black),
+      var(--vinous),
+      var(--pink)
+    );
+  }
+  50% {
+    background: linear-gradient(
+      45deg,
+      var(--vinous),
+      var(--pink),
+      var(--black)
+    );
+  }
+  100% {
+    background: linear-gradient(
+      45deg,
+      var(--pink),
+      var(--black),
+      var(--vinous)
+    );
+  }
+}
+
+@keyframes secondGradientAnimation {
+  0% {
+    background: linear-gradient(
+      45deg,
+      var(--black),
+      var(--vinous),
+      var(--black)
+    );
+  }
+  50% {
+    background: linear-gradient(
+      45deg,
+      var(--vinous),
+      var(--black),
+      var(--vinous)
+    );
+  }
+  100% {
+    background: linear-gradient(
+      45deg,
+      var(--black),
+      var(--vinous),  
+      var(--black),
+      var(--vinous)
+    );
+  }
+}
+// ----------main---------------
+.background {
+  background: url("../../images/main-page.png") no-repeat center center;
+  background-size: cover;
+  height: 86vh;
+  position: relative;
+  .container {
+    font-family: "oswald", sans-serif;
+    color: var(--white);
+    // -----------------------section 1 ----------------------
+    .main-page {
+      .title {
+        text-transform: uppercase;
+        padding-top: 8rem;
+        font-weight: 300;
+        font-size: 10rem;
+        line-height: 7rem;
+        letter-spacing: 0.1rem;
+      }
+      .text {
+        margin: 3rem 0 1rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--black), var(--vinous), var(--pink));
+  animation: gradientAnimation 3s infinite alternate;
+  z-index: -1; /* Слой будет позади содержимого */
+}
+
+.main {
+  .catalog-back {
+    padding: 2% 0;
+    background: var(--black);
+    .container {
+      .catalog {
+        color: var(--white);
+        .title {
+          font-size: 4rem;
+          text-transform: uppercase;
+        }
+        .catalogs {
+          width: 90%;
+          margin: 0 auto;
+          .catalog-card {
+            margin: 1%;
+            padding:0 1%;
+            border: 1px solid var(--white);
+            border-radius: 10px;
+            background: linear-gradient(
+              90deg,
+              rgba(176, 158, 158, 0.7),
+              rgba(242, 219, 219, 0.7),
+              transparent
+              );
+            font-family: "oswald", sans-serif;
+            text-transform: uppercase;
+            .title {
+              font-size: 2rem;
+              width: 70%;
+            }
+            .list {
+              list-style-type: disc;
+              .item {
+              }
+            }
+            .link {
+              text-decoration: underline;
+              margin-left: 60%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .famous-back {
+    padding: 2% 0;
+    background: var(--black);
+    animation: secondGradientAnimation 5s infinite alternate;
+    .container{
+      .famous{
+        color: var(--white);
+        .title{
+          font-size: 5rem;
+          line-height: 4rem;
+          text-transform: uppercase;
+        }
+        .text{
+          font-size: 1rem;
+          text-align: center;
+        }
+        #famous-carousel{
+          .carousel-inner{
+            .carousel-item{
+              .d-flex{
+                .carousel-item-card{
+                  border: 1px solid var(--aqua);
+                  padding: 1%;
+                  margin: 0 auto;
+                  .item-img{
+                    width: 50%;
+                  }
+                  .text, .price{
+                    padding-left: 2%;
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    text-align: start;
+                  }
+                  .button{
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// -------footer--------
+.footer {
+  background-color: var(--black);
+  font-family: "cormorant", sans-serif;
+  .container {
+    .footer-nav {
+      .mobile-footer-list {
+        h6 {
+          font-size: 1.8em;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+        .text {
+          color: var(--white);
+          text-transform: uppercase;
+          font-size: 1.55em;
+        }
+        .logo {
+          width: 100px;
+          height: 150px;
+        }
+        img {
+          width: 50px;
+        }
+      }
+      .footer-list {
+        .footer-item {
+          padding-left: 20px;
+          text-transform: uppercase;
+          font-size: 12px;
+          letter-spacing: 0;
+          .footer-logo {
+          }
+          .text {
+            color: var(--white);
+          }
+          .footer-link {
+            color: var(--white);
+          }
+          .socials {
+            gap: 10px;
+            .footer-link-img {
+            }
+          }
+          .aqua {
+            color: var(--aqua);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .background {
+    height: 70vh;
+    .container {
+      .main-page {
+        .title {
+          font-size: 7rem; /* Уменьшение размера для мобильных устройств */
+          line-height: 5rem; /* Увеличение высоты строки для улучшения читаемости */
+          padding-top: 5rem; /* Уменьшение отступа сверху */
+        }
+        .text {
+          font-size: 1.5rem; /* Уменьшение размера текста для мобильных устройств */
+          margin: 3rem 0 2rem; /* Уменьшение отступов */
+        }
+      }
+    }
+  }
+  .main {
+    .title{
+      text-align: center;
+    }
+    .catalog-back{
+      .container{
+        .catalog{
+          .title{
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+    .famous-back{
+      .container{
+        .famous{
+          .title{
+            font-size: 2.5rem;
+            line-height: 1.8rem;
+            text-transform: uppercase;
+          }
+          .text{
+            font-size: 0.5rem;
+            text-align: center;
+          }
+          img{
+            height: 60vh;
+          }
+        }
+      }
+    }
+  }
+}
+

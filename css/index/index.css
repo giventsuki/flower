@@ -1,0 +1,364 @@
+@charset "UTF-8";
+:root {
+  --black: #040a0a;
+  --aqua: #43ffd2;
+  --vinous: #7d2253;
+  --pink: #d978ac;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.aqua {
+  color: var(--aqua);
+}
+
+.black {
+  color: var(--black);
+}
+
+.white {
+  color: var(--white);
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.vinous {
+  color: var(--vinous);
+}
+
+.button {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.normal {
+  background-color: var(--aqua);
+  color: var(--black);
+}
+
+.basket-normal {
+  background-color: transparent;
+  border: 1px solid var(--white);
+  padding: 3% 5%;
+  color: var(--white);
+}
+
+.title {
+  font-family: "cormorant", sans-serif;
+}
+
+.header {
+  background-color: var(--black);
+  font-family: "cormorant", sans-serif;
+}
+.header .container .nav {
+  width: 100%;
+}
+.header .container .nav .mobile-nav-list {
+  width: 100%;
+  margin: 10px 0;
+}
+.header .container .nav .mobile-nav-list .mobile-item {
+  /* Стили для кнопки меню */
+  /* Гамбургер */
+  /* Стили для меню */
+  /* Элементы меню */
+  /* Показать меню при активированном чекбоксе */
+  /* Изменение стилей гамбургера при открытом меню */
+}
+.header .container .nav .mobile-nav-list .mobile-item .mobile-item-text {
+  text-transform: uppercase;
+  font-size: 2em;
+  color: var(--white);
+}
+.header .container .nav .mobile-nav-list .mobile-item img {
+  width: 35px;
+}
+.header .container .nav .mobile-nav-list .mobile-item #menu__toggle {
+  opacity: 0; /* Скрываем чекбокс */
+}
+.header .container .nav .mobile-nav-list .mobile-item .menu__btn {
+  display: flex;
+  align-items: center;
+  position: relative; /* Изменено на relative */
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+.header .container .nav .mobile-nav-list .mobile-item .menu__btn > span,
+.header .container .nav .mobile-nav-list .mobile-item .menu__btn > span::before,
+.header .container .nav .mobile-nav-list .mobile-item .menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--aqua);
+  transition: transform 0.3s ease; /* Добавляем анимацию */
+}
+.header .container .nav .mobile-nav-list .mobile-item .menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+.header .container .nav .mobile-nav-list .mobile-item .menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+.header .container .nav .mobile-nav-list .mobile-item .menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden; /* Скрываем по умолчанию */
+  top: 0;
+  left: -100%; /* Скрываем за пределами экрана */
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: var(--black);
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease; /* Добавляем анимацию */
+}
+.header .container .nav .mobile-nav-list .mobile-item .menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.header .container .nav .mobile-nav-list .mobile-item .menu__item:hover {
+  background-color: var(--black);
+}
+.header .container .nav .mobile-nav-list .mobile-item #menu__toggle:checked ~ .menu__box {
+  visibility: visible; /* Меню видно */
+  left: 0; /* Показываем меню */
+}
+.header .container .nav .mobile-nav-list .mobile-item #menu__toggle:checked + .menu__btn > span {
+  background-color: transparent; /* Скрываем гамбургер при открытом меню */
+}
+.header .container .nav .mobile-nav-list .mobile-item #menu__toggle:checked + .menu__btn > span::before {
+  transform: translateY(8px) rotate(45deg); /* Поворачиваем верхнюю часть */
+}
+.header .container .nav .mobile-nav-list .mobile-item #menu__toggle:checked + .menu__btn > span::after {
+  transform: translateY(-8px) rotate(-45deg); /* Поворачиваем нижнюю часть */
+}
+.header .container .nav .nav-list {
+  width: 100%;
+  margin: 5px 0;
+}
+.header .container .nav .nav-list .nav-item .nav-link {
+  color: var(--white);
+}
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(45deg, var(--black), var(--vinous), var(--pink));
+  }
+  50% {
+    background: linear-gradient(45deg, var(--vinous), var(--pink), var(--black));
+  }
+  100% {
+    background: linear-gradient(45deg, var(--pink), var(--black), var(--vinous));
+  }
+}
+@keyframes secondGradientAnimation {
+  0% {
+    background: linear-gradient(45deg, var(--black), var(--vinous), var(--black));
+  }
+  50% {
+    background: linear-gradient(45deg, var(--vinous), var(--black), var(--vinous));
+  }
+  100% {
+    background: linear-gradient(45deg, var(--black), var(--vinous), var(--black), var(--vinous));
+  }
+}
+.background {
+  background: url("../../images/main-page.png") no-repeat center center;
+  background-size: cover;
+  height: 86vh;
+  position: relative;
+}
+.background .container {
+  font-family: "oswald", sans-serif;
+  color: var(--white);
+}
+.background .container .main-page .title {
+  text-transform: uppercase;
+  padding-top: 8rem;
+  font-weight: 300;
+  font-size: 10rem;
+  line-height: 7rem;
+  letter-spacing: 0.1rem;
+}
+.background .container .main-page .text {
+  margin: 3rem 0 1rem;
+  font-size: 1.5rem;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--black), var(--vinous), var(--pink));
+  animation: gradientAnimation 3s infinite alternate;
+  z-index: -1; /* Слой будет позади содержимого */
+}
+
+.main .catalog-back {
+  padding: 2% 0;
+  background: var(--black);
+}
+.main .catalog-back .container .catalog {
+  color: var(--white);
+}
+.main .catalog-back .container .catalog .title {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+.main .catalog-back .container .catalog .catalogs {
+  width: 90%;
+  margin: 0 auto;
+}
+.main .catalog-back .container .catalog .catalogs .catalog-card {
+  margin: 1%;
+  padding: 0 1%;
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(176, 158, 158, 0.7), rgba(242, 219, 219, 0.7), transparent);
+  font-family: "oswald", sans-serif;
+  text-transform: uppercase;
+}
+.main .catalog-back .container .catalog .catalogs .catalog-card .title {
+  font-size: 2rem;
+  width: 70%;
+}
+.main .catalog-back .container .catalog .catalogs .catalog-card .list {
+  list-style-type: disc;
+}
+.main .catalog-back .container .catalog .catalogs .catalog-card .link {
+  text-decoration: underline;
+  margin-left: 60%;
+}
+.main .famous-back {
+  padding: 2% 0;
+  background: var(--black);
+  animation: secondGradientAnimation 5s infinite alternate;
+}
+.main .famous-back .container .famous {
+  color: var(--white);
+}
+.main .famous-back .container .famous .title {
+  font-size: 5rem;
+  line-height: 4rem;
+  text-transform: uppercase;
+}
+.main .famous-back .container .famous .text {
+  font-size: 1rem;
+  text-align: center;
+}
+.main .famous-back .container .famous #famous-carousel .carousel-inner .carousel-item .d-flex .carousel-item-card {
+  border: 1px solid var(--aqua);
+  padding: 1%;
+  margin: 0 auto;
+}
+.main .famous-back .container .famous #famous-carousel .carousel-inner .carousel-item .d-flex .carousel-item-card .item-img {
+  width: 50%;
+}
+.main .famous-back .container .famous #famous-carousel .carousel-inner .carousel-item .d-flex .carousel-item-card .text, .main .famous-back .container .famous #famous-carousel .carousel-inner .carousel-item .d-flex .carousel-item-card .price {
+  padding-left: 2%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: start;
+}
+.footer {
+  background-color: var(--black);
+  font-family: "cormorant", sans-serif;
+}
+.footer .container .footer-nav .mobile-footer-list h6 {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.footer .container .footer-nav .mobile-footer-list .text {
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 1.55em;
+}
+.footer .container .footer-nav .mobile-footer-list .logo {
+  width: 100px;
+  height: 150px;
+}
+.footer .container .footer-nav .mobile-footer-list img {
+  width: 50px;
+}
+.footer .container .footer-nav .footer-list .footer-item {
+  padding-left: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+.footer .container .footer-nav .footer-list .footer-item .text {
+  color: var(--white);
+}
+.footer .container .footer-nav .footer-list .footer-item .footer-link {
+  color: var(--white);
+}
+.footer .container .footer-nav .footer-list .footer-item .socials {
+  gap: 10px;
+}
+.footer .container .footer-nav .footer-list .footer-item .aqua {
+  color: var(--aqua);
+}
+
+@media (max-width: 768px) {
+  .background {
+    height: 70vh;
+  }
+  .background .container .main-page .title {
+    font-size: 7rem; /* Уменьшение размера для мобильных устройств */
+    line-height: 5rem; /* Увеличение высоты строки для улучшения читаемости */
+    padding-top: 5rem; /* Уменьшение отступа сверху */
+  }
+  .background .container .main-page .text {
+    font-size: 1.5rem; /* Уменьшение размера текста для мобильных устройств */
+    margin: 3rem 0 2rem; /* Уменьшение отступов */
+  }
+  .main .title {
+    text-align: center;
+  }
+  .main .catalog-back .container .catalog .title {
+    font-size: 2.5rem;
+  }
+  .main .famous-back .container .famous .title {
+    font-size: 2.5rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+  }
+  .main .famous-back .container .famous .text {
+    font-size: 0.5rem;
+    text-align: center;
+  }
+  .main .famous-back .container .famous img {
+    height: 60vh;
+  }
+}/*# sourceMappingURL=index.css.map */
